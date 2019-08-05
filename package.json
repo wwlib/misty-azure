@@ -1,0 +1,12 @@
+{
+  "name": "misty-azure",
+  "version": "0.0.1",
+  "description": "Azure services api for use with Misty.",
+  "main": "index.js",
+  "dependencies": {
+    "cognitiveserviceslib": "wwlib/cognitiveserviceslib"
+  },
+  "repository": "git+ssh://git@github.com:wwlib/misty-azure.git",
+  "author": "Andrew Rapo",
+  "license": "MIT"
+}

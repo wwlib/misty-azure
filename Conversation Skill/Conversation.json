@@ -1,0 +1,19 @@
+{
+    "Name": "Conversation Skill",
+    "UniqueId": "c474d885-90e3-4b29-8b79-557407261603",
+    "Description": "Talk to Misty.",
+    "StartupRules": [
+      "Manual",
+      "Robot"
+    ],
+    "Language": "javascript",
+    "BroadcastMode": "verbose",
+    "TimeoutInSeconds": 600,
+    "CleanupOnCancel": false,
+    "WriteToLog": false,
+    "Parameters": {
+      "int": 10,
+      "double": 20.5,
+      "string": "twenty"
+    }
+  }

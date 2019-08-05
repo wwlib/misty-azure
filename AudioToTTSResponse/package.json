@@ -1,0 +1,17 @@
+{
+    "name": "misty-audio-to-tts-response",
+    "version": "0.0.1",
+    "description": "Misty Audio To TTS Response",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Andrew Rapo",
+    "license": "MIT",
+    "dependencies": {
+      "request": "^2.88.0",
+      "request-promise": "^4.2.4",
+      "cognitiveserviceslib": "wwlib/cognitiveserviceslib"
+    }
+  }
+  

@@ -1,0 +1,10 @@
+node_modules
+dist
+hide
+yarn-error.log
+package-lock.json
+data/config.json
+AudioToTTSResponse/config.json
+tts-out.wav
+.DS_Store
+.ipynb_checkpoints
