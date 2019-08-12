@@ -11,6 +11,9 @@ https://youtu.be/-DtE3KhRmNQ
 Misty II - Conversation Skill (V2) w/Console
 https://youtu.be/HJD_yYEE2v8
 
+Notes about using LUIS NLU
+https://medium.com/@andrew.rapo/robokit-setting-up-azure-cognitive-services-bing-speech-luis-nlu-fbb39f5dc957
+
 #### Azure Function Apps
 
 The Azure services are implemented as a Function Apps 
