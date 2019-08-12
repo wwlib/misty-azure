@@ -39,11 +39,14 @@ try {
 }
 ```
 
-
-
 #### reference
+
+##### misc
 - https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text
 - https://www.henkboelman.com/speech-to-text-in-an-azure-function-using-the-bing-speech-api/
 - https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-js-node
 - https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/troubleshooting
 - https://www.twilio.com/docs/usage/tutorials/serverless-webhooks-azure-functions-and-node-js
+
+##### Azure
+- https://markheath.net/post/avoiding-azure-functions-cold-starts

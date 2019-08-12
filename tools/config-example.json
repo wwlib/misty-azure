@@ -1,0 +1,7 @@
+{
+    "Microsoft": {
+        "AudioToTTSFunctionURL": "",
+        "AudioToIntentFunctionURL": "",
+        "TextToTTSFunctionURL": ""
+    }
+}

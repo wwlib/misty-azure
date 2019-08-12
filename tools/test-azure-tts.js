@@ -1,8 +1,13 @@
 const { AzureTTSController } = require('cognitiveserviceslib');
-const config = require('../AudioToTTSResponse/config.json');
+const config = require('../AzureFunctions/AudioToTTSResponse/config.json');
+
+let timeStart = new Date().getTime();
+const timeLog = {
+  timeStart: timeStart
+}
 
 // console.log(AzureTTSController);
-console.log(config);
+// console.log(config);
 
 azureTTSController = new AzureTTSController(config);
 
@@ -12,7 +17,7 @@ azureTTSController = new AzureTTSController(config);
 //         console.log(`token:`, token);
 //     })
 
-const token = azureTTSController.SynthesizerStart("This is a test of bing t t s");
+const token = azureTTSController.SynthesizerStart("Where does the general keep his armies? ,, In his sleevies.");
 
 token.on('Synthesizing', () => {
     console.log(`azureTTSController: on Synthesizing`);
@@ -24,6 +29,9 @@ token.on('SynthesisEndedEvent', () => {
 
 token.complete
     .then((result) => {
+        timeLog.timeToResponse = new Date().getTime();
+        timeLog.elapsedTime = timeLog.timeToResponse - timeLog.timeStart;
+        console.log(JSON.stringify(timeLog, null, 2));
         console.log(`azureTTSController: result: ${result}`);
     })
     .catch((error) => {

@@ -1,9 +1,14 @@
 const fs = require('fs');
 const { AzureSpeechApiController } = require('cognitiveserviceslib');
-const config = require('../AudioToTTSResponse/config.json');
+const config = require('../AzureFunctions/AudioToTTSResponse/config.json');
 
-console.log(AzureSpeechApiController);
-console.log(config);
+let timeStart = new Date().getTime();
+const timeLog = {
+  timeStart: timeStart
+}
+
+// console.log(AzureSpeechApiController);
+// console.log(config);
 
 const azureSpeechApiController = new AzureSpeechApiController(config);
 
@@ -14,7 +19,7 @@ const azureSpeechApiController = new AzureSpeechApiController(config);
 //     })
 
 let waveBuffer;
-fs.readFile('weather.wav', function (err, waveBuffer) {
+fs.readFile('jokes.wav', function (err, waveBuffer) {
     if (err) throw err;
     console.log(waveBuffer);
 
@@ -34,6 +39,9 @@ fs.readFile('weather.wav', function (err, waveBuffer) {
 
     token.complete
         .then((utterance) => {
+            timeLog.timeToResponse = new Date().getTime();
+            timeLog.elapsedTime = timeLog.timeToResponse - timeLog.timeStart;
+            console.log(JSON.stringify(timeLog, null, 2));
             console.log(`azureSpeechApiController: utterance: ${utterance}`);
         })
         .catch((error) => {

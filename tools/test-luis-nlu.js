@@ -1,8 +1,13 @@
 const { LUISController } = require('cognitiveserviceslib');
-const config = require('../AudioToTTSResponse/config.json');
+const config = require('../AzureFunctions/AudioToTTSResponse/config.json');
 
-console.log(`LUISController:`, LUISController);
-console.log(config);
+let timeStart = new Date().getTime();
+const timeLog = {
+  timeStart: timeStart
+}
+
+// console.log(`LUISController:`, LUISController);
+// console.log(config);
 
 const luisController = new LUISController(config);
 
@@ -11,6 +16,9 @@ const luisController = new LUISController(config);
 const token = luisController.getIntentAndEntities('what time is it');
 token.complete
     .then((intentAndEntities) => {
+        timeLog.timeToResponse = new Date().getTime();
+        timeLog.elapsedTime = timeLog.timeToResponse - timeLog.timeStart;
+        console.log(JSON.stringify(timeLog, null, 2));
         console.log(`NLUIntentAndEntities: `, JSON.stringify(intentAndEntities, null, 2));
     })
     .catch((error) => {
